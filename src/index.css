@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "netflix font";
+  src: url("../assets/fonts/NetflixSans_W_Bd.woff2") format(woff2);
+}
+
+body {
+  font-family: "netflix font", "Helvetica Neue", sans-serif;
+  background-color: #0b0b0f;
+  color: #ffffff;
+  scrollbar-width: none;
+}
+
+html {
+  scrollbar-width: none;
+
+}
+
+.font-oswald-bold {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+
+footer,li {
+  font-family: "Open Sans", system-ui, sans-serif;
+}

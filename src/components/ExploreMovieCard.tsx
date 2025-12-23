@@ -11,13 +11,13 @@ const ExploreMovieCard = ({ movie }: Movie) => {
   const setMovieId = useMoviesStore((s) => s.setMovieId);
 
   return (
-    <Link to={`/explore_movies/${movie.id}`} className="w-full">
+    <Link to={`/explore_movies/${movie.id}`} className="w-full max-w-47.5">
       <div
         onClick={() => setMovieId(movie.id)}
         key={movie.id}
-        className="hover:transform relative hover:scale-102 duration-300  max-w-47.5 h-61.25 transition-transform  rounded-2xl bg-white"
+        className="hover:transform relative hover:scale-102 duration-300 w-full max-w-47.5 h-61.25 transition-transform rounded-2xl bg-white"
         style={{
-          backgroundImage: movie.backdrop_path
+          backgroundImage: movie.poster_path
             ? `url(${GetMovieImageUrl(movie.poster_path, "/w300")})`
             : "",
           backgroundSize: "cover",

@@ -5,6 +5,8 @@ import useMoviesStore from "../services/store";
 const Genres = () => {
   const { data, error, isLoading } = useGenresList();
   const setGenre = useMoviesStore((s) => s.setGenreId);
+  const setClearInput = useMoviesStore((s) => s.setClearInput);
+  const setSearchText = useMoviesStore((s) => s.setSearchText);
 
   const genres = data?.genres;
 
@@ -16,7 +18,11 @@ const Genres = () => {
         <ul className="flex  w-full whitespace-nowrap">
           {genres?.map((genre) => (
             <li
-              onClick={() => setGenre(genre.id)}
+              onClick={() => {
+                setGenre(genre.id);
+                setClearInput();
+                setSearchText("");
+              }}
               className="text-[#9e9b9b] ml-5 cursor-pointer hover:text-[#e1e8ff]"
               key={genre.id}
             >

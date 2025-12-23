@@ -1,14 +1,15 @@
 import Genres from "../components/Genres";
 import { ExploreMoviesGrid } from "../components/ExploreMoviesGrid";
-import { BsChevronDown } from "react-icons/bs";
 import useMoviesStore from "../services/store";
 import useGenresList from "../hooks/useGenresList";
 
 const ExplorePage = () => {
   const genreId = useMoviesStore((s) => s.genreId);
-  const { data } = useGenresList();
+  const { data, error } = useGenresList();
 
   const selectedGenre = data?.genres.filter((g) => g.id === genreId);
+
+  if (error) throw error;
 
   return (
     <>
@@ -26,12 +27,12 @@ const ExplorePage = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 mt-10">
-        <div className="max-w-40  md:max-w-50 rounded flex gap-2 justify-center items-center px-5 md:px-10 py-2 bg-[#161f2a] text-[#ccc] ">
-          {selectedGenre?.[0] ? selectedGenre[0].name : "All Genre"}
-        </div>
-        <div className=" max-w-40 flex gap-4 items-center rounded px-4 md:px-8 py-2 bg-[#161f2a] text-[#ccc] ">
-          Popular <BsChevronDown />
+      <div className="flex mt-10">
+        <div className="text-[12px] rounded  items-center px-3 md:px-5 py-2 bg-[#232e3a] text-[#8c939c] ">
+          <h3 className="text-[#e9edf7] inline mr-2 text-[12px]">
+            Selected Genre:
+          </h3>{" "}
+          {selectedGenre?.[0] ? selectedGenre[0].name : "All Genres"}
         </div>
       </div>
 

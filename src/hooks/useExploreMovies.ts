@@ -1,12 +1,11 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import tmdbApiClient from "../services/ApiClient.ts";
-
 import type { MovieList } from "../entities/MovieList.ts";
 import type { MovieTemp } from "../entities/MovieTemp.ts";
 
 const ApiClient = new tmdbApiClient<MovieTemp>("/discover/movie");
 
-const useExploreMovies = (genreId: number | null) => {
+const useExploreMovies = (genreId: number | null, searchText: string) => {
   return useInfiniteQuery<MovieList<MovieTemp>, Error>({
     queryKey: ["explore_popular", genreId],
 
@@ -25,6 +24,7 @@ const useExploreMovies = (genreId: number | null) => {
         : undefined;
     },
     initialPageParam: 1,
+    enabled: searchText === "",
     refetchOnMount: "always",
     refetchOnWindowFocus: "always",
   });

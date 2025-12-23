@@ -104,6 +104,7 @@ const HomePageFooter = () => {
           <a
             href="https://www.linkedin.com/in/tomilola-obasan"
             target={"_blank"}
+            rel="noopener noreferer"
             className="text-[11px] hover:text-[#9767d9] text-[#a2a2a2]"
           >
             LinkedIn
@@ -119,6 +120,7 @@ const HomePageFooter = () => {
           <a
             target="_blank"
             href="https://www.obasantomilola@gmail.com"
+            rel="noopener noreferer"
             className="text-[11px] hidden md:block hover:text-[#9767d9] text-[#a2a2a2]"
           >
             Email

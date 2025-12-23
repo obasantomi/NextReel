@@ -6,15 +6,22 @@ import ExploreMovieCard from "./ExploreMovieCard";
 import MovieSkeleton from "./MovieSkeleton";
 import useMoviesStore from "../services/store";
 import { Spinner } from "@chakra-ui/react";
+import useSearch from "../hooks/useSearch";
 
 export const ExploreMoviesGrid = () => {
   const genreId = useMoviesStore((s) => s.genreId);
+  const searchText = useMoviesStore((s) => s.searchText);
 
-  const { data, isLoading, fetchNextPage, hasNextPage } =
-    useExploreMovies(genreId);
+  const { data, isLoading, hasNextPage, fetchNextPage, error } = searchText
+    ? useSearch(searchText)
+    : useExploreMovies(genreId, searchText);
 
   const dataLength =
-    data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
+    data?.pages?.reduce((acc, page) => acc + page.results.length, 0) || 0;
+
+  if (data?.pages?.[0].results?.length === 0) return <p>No results found.</p>;
+
+  if (error) throw error;
 
   return (
     <InfiniteScroll

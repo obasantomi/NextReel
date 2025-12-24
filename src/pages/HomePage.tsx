@@ -27,7 +27,7 @@ const HomePage = () => {
               NextReel
             </span>
             <a className="bg-[#e50914] hover:bg-[#b0070f] text-white transition-colors duration-300 max-h-8 cursor-pointer font-bold self-center p-3 flex justify-center items-center rounded">
-              Membership
+              Explore
             </a>
           </nav>
 

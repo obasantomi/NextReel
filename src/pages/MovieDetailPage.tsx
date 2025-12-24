@@ -50,7 +50,6 @@ const MovieDetailPage = () => {
               onLoad={() => setLoading(false)}
               title="Movie Trailer"
               allowFullScreen
-              sandbox="allow-scripts allow-same-origin"
               allow="autoplay; encrypted-media"
               className="w-full h-100 border-0"
             />
@@ -110,7 +109,6 @@ const MovieDetailPage = () => {
                     }}
                     allow="encrypted-media"
                     title="Movie Videos"
-                    sandbox="allow-scripts allow-same-origin"
                     className="w-71.25 h-40"
                   />
                 );

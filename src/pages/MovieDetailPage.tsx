@@ -150,15 +150,16 @@ const MovieDetailPage = () => {
               </div>
               <div className="text-[13px] flex items-center gap-1.5 text-[#c6c8cd]">
                 Viewer:{" "}
-                {movieDet?.adult ? (
-                  <span className="inline-flex text-[#6f7d90] text-[12px] gap-1 items-center">
-                    <PiWarningCircleFill color="#e50914" /> Rated 18+
-                  </span>
-                ) : (
-                  <span className="inline-flex whitespace-nowrap text-[#6f7d90] gap-1 text-[12px] items-center">
-                    <AiTwotoneSafetyCertificate size={15} /> All ages
-                  </span>
-                )}
+                {movieDet?.adult &&
+                  (movieDet?.adult ? (
+                    <span className="inline-flex text-[#6f7d90] text-[12px] gap-1 items-center">
+                      <PiWarningCircleFill color="#e50914" /> Rated 18+
+                    </span>
+                  ) : (
+                    <span className="inline-flex whitespace-nowrap text-[#6f7d90] gap-1 text-[12px] items-center">
+                      <AiTwotoneSafetyCertificate size={15} /> All ages
+                    </span>
+                  ))}
               </div>
               <div className="text-[13px] flex items-center gap-1.5 text-[#c6c8cd]">
                 Status:{" "}

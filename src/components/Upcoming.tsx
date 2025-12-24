@@ -1,6 +1,3 @@
-import { FiChevronRight } from "react-icons/fi";
-
-
 import Marquee from "react-fast-marquee";
 import MovieSkeleton from "./MovieSkeleton";
 import useUpcoming from "../hooks/useUpcoming";
@@ -13,10 +10,9 @@ const Upcoming = () => {
 
   return (
     <>
-      <div className="flex mb-4 flex-col p-5 pb-0 pt-10 border-[#390533]">
+      <div className="flex mb-3 flex-col p-5 pb-0 pt-10 border-[#390533]">
         <h2 className="flex pl-2 border-l-4 items-center text-[1.5rem]  font-semibold border-[#e50914]">
           Upcoming
-          <FiChevronRight className="text-2xl text-white" />
         </h2>
 
         {isLoading && <MovieSkeleton />}

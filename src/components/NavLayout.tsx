@@ -21,12 +21,14 @@ const NavLayout = () => {
     <div className="px-5 md:px-10 flex flex-col">
       <nav className="flex justify-between items-center w-full gap-2 md:gap-5  pt-2">
         <div>
-          <span className="text-[#e50914] hidden md:block font-oswald-bold font-bold md:text-[20px]">
-            NextReel
-          </span>
-          <span className="text-[#e50914] md:hidden block font-oswald-bold brightness-100 contrast-200 font-bold text-[20px]">
-            NR
-          </span>
+          <Link to={"/"}>
+            <span className="text-[#e50914] hidden md:block font-oswald-bold font-bold md:text-[20px]">
+              NextReel
+            </span>
+            <span className="text-[#e50914] md:hidden block font-oswald-bold brightness-100 contrast-200 font-bold text-[20px]">
+              NR
+            </span>
+          </Link>
         </div>
         {/* Input Group */}
 
@@ -61,12 +63,6 @@ const NavLayout = () => {
           className="bg-[#e50914] flex hover:bg-[#b0070f] text-[12px] text-white transition-colors duration-300 max-h-8 cursor-pointer font-bold self-center p-1.5 md:p-3  justify-center items-center rounded"
         >
           Explore
-        </Link>
-        <Link
-          to={"/"}
-          className="bg-[#e50914] flex hover:bg-[#b0070f] text-[12px] text-white transition-colors duration-300 max-h-8 cursor-pointer font-bold self-center p-1.5 md:p-3  justify-center items-center rounded"
-        >
-          Home
         </Link>
       </nav>
       <Outlet />

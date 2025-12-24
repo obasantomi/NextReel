@@ -26,9 +26,12 @@ const HomePage = () => {
             <span className="text-[#e50914] font-oswald-bold brightness-100 contrast-200 font-bold text-[20px] md:text-[40px]">
               NextReel
             </span>
-            <a className="bg-[#e50914] hover:bg-[#b0070f] text-white transition-colors duration-300 max-h-8 cursor-pointer font-bold self-center p-3 flex justify-center items-center rounded">
+            <Link
+              className="bg-[#e50914] hover:bg-[#b0070f] text-white transition-colors duration-300 max-h-8 cursor-pointer font-bold self-center p-3 flex justify-center items-center rounded"
+              to={"/explore_movies"}
+            >
               Explore
-            </a>
+            </Link>
           </nav>
 
           <div className="text-white flex flex-col items-center gap-6 max-w-100 md:max-w-162.5 text-center">
